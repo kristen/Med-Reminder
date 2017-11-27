@@ -38,4 +38,15 @@ class MedicationModel {
         return meds
     }
     
+    func save() {
+        // Storing core data
+        let medication = NSEntityDescription.insertNewObject(forEntityName: "Medication", into: MedCoreData.context)
+        medication.setValue(self.name, forKey: "name")
+        do {
+            try MedCoreData.context.save()
+            print ("Saved")
+        } catch {
+            // Process error
+        }
+    }
 }

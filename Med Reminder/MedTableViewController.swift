@@ -25,6 +25,12 @@ class MedTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.medications = MedicationModel.fetchSavedData()
+        self.tableView.reloadData()
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -35,7 +41,7 @@ class MedTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 1
+        return self.medications.count
     }
 
     
@@ -94,5 +100,4 @@ class MedTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
 }
