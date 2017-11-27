@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7B295B101FCBAF3B005EE375 /* Med_Reminder.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7B295B0E1FCBAF3B005EE375 /* Med_Reminder.xcdatamodeld */; };
+		7B295B501FCBB900005EE375 /* MedicationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B295B4E1FCBB797005EE375 /* MedicationModel.swift */; };
+		7B295B521FCBBC35005EE375 /* MedCoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B295B511FCBBC35005EE375 /* MedCoreData.swift */; };
 		7BC334071FCB67FB00778362 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC334061FCB67FB00778362 /* AppDelegate.swift */; };
 		7BC3340C1FCB67FB00778362 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7BC3340A1FCB67FB00778362 /* Main.storyboard */; };
 		7BC3340E1FCB67FB00778362 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7BC3340D1FCB67FB00778362 /* Assets.xcassets */; };
@@ -36,6 +39,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7B295B0F1FCBAF3B005EE375 /* Med Reminder.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Med Reminder.xcdatamodel"; sourceTree = "<group>"; };
+		7B295B4E1FCBB797005EE375 /* MedicationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicationModel.swift; sourceTree = "<group>"; };
+		7B295B511FCBBC35005EE375 /* MedCoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedCoreData.swift; sourceTree = "<group>"; };
 		7BC334031FCB67FB00778362 /* Med Reminder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Med Reminder.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7BC334061FCB67FB00778362 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7BC3340B1FCB67FB00778362 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -103,12 +109,15 @@
 			children = (
 				7BC334061FCB67FB00778362 /* AppDelegate.swift */,
 				7BC3340A1FCB67FB00778362 /* Main.storyboard */,
+				7B295B0E1FCBAF3B005EE375 /* Med_Reminder.xcdatamodeld */,
 				7BC3340D1FCB67FB00778362 /* Assets.xcassets */,
 				7BC3340F1FCB67FB00778362 /* LaunchScreen.storyboard */,
 				7BC334121FCB67FB00778362 /* Info.plist */,
 				7BC334351FCB9A5A00778362 /* MedTableViewCell.swift */,
 				7BC334361FCB9A5A00778362 /* MedTableViewCell.xib */,
 				7BC3343D1FCB9D7500778362 /* MedTableViewController.swift */,
+				7B295B4E1FCBB797005EE375 /* MedicationModel.swift */,
+				7B295B511FCBBC35005EE375 /* MedCoreData.swift */,
 			);
 			path = "Med Reminder";
 			sourceTree = "<group>";
@@ -266,6 +275,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7B295B501FCBB900005EE375 /* MedicationModel.swift in Sources */,
+				7B295B521FCBBC35005EE375 /* MedCoreData.swift in Sources */,
+				7B295B101FCBAF3B005EE375 /* Med_Reminder.xcdatamodeld in Sources */,
 				7BC3343E1FCB9D7500778362 /* MedTableViewController.swift in Sources */,
 				7BC334371FCB9A5A00778362 /* MedTableViewCell.swift in Sources */,
 				7BC334071FCB67FB00778362 /* AppDelegate.swift in Sources */,
@@ -562,6 +574,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		7B295B0E1FCBAF3B005EE375 /* Med_Reminder.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				7B295B0F1FCBAF3B005EE375 /* Med Reminder.xcdatamodel */,
+			);
+			currentVersion = 7B295B0F1FCBAF3B005EE375 /* Med Reminder.xcdatamodel */;
+			path = Med_Reminder.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 7BC333FB1FCB67FB00778362 /* Project object */;
 }

@@ -10,11 +10,15 @@ import UIKit
 
 class MedTableViewController: UITableViewController {
     
+    var medications = [MedicationModel]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tableView.register(UINib(nibName: "MedTableViewCell", bundle: nil),    forCellReuseIdentifier: "MedCell")
-
+        
+        self.medications = MedicationModel.fetchSavedData()
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -37,6 +41,8 @@ class MedTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MedCell", for: indexPath) as! MedTableViewCell
+        let medModel = self.medications[indexPath.row]
+        cell.setMedModel(medModel: medModel)
 
         // Configure the cell...
 
