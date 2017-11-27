@@ -15,4 +15,20 @@ class MedCoreData {
         let context = appDelegate.persistentContainer.viewContext
         return context
     }
+    
+    static func fetch(entityName: String) -> [NSManagedObject]? {
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: entityName)
+        request.returnsObjectsAsFaults = false
+        let results = try? MedCoreData.context.fetch(request)
+        return results as? [NSManagedObject]
+    }
+    
+    static func save() {
+        do {
+            try context.save()
+            print ("Saved")
+        } catch {
+            // Process error
+        }
+    }
 }
