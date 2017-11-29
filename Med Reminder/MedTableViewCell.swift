@@ -12,7 +12,7 @@ class MedTableViewCell: UITableViewCell {
     
     @IBOutlet weak var medicationLabel: UILabel!
     
-    var medModel: MedicationModel?
+    var medModel: Medication?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -25,7 +25,7 @@ class MedTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func setMedModel(medModel: MedicationModel) {
+    func setMedModel(medModel: Medication) {
         self.medModel = medModel
         self.medicationLabel.text = medModel.name
     }

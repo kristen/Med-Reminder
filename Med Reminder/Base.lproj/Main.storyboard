@@ -13,7 +13,7 @@
         <!--Medications-->
         <scene sceneID="c9m-HS-zM9">
             <objects>
-                <tableViewController id="dJ6-TU-FNK" customClass="MedTableViewController" customModule="Med_Reminder" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="dJ6-TU-FNK" customClass="CoreDataMedTableViewController" customModule="Med_Reminder" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="xQw-Kx-CYi">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -44,7 +44,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H5V-2k-R98">
-                                <rect key="frame" x="16" y="58" width="45" height="21"/>
+                                <rect key="frame" x="16" y="58" width="343" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -75,6 +75,7 @@
                             <constraint firstItem="jHg-60-Zsh" firstAttribute="top" secondItem="JGS-Xi-clS" secondAttribute="top" id="1iE-a8-dMK"/>
                             <constraint firstItem="jHg-60-Zsh" firstAttribute="leading" secondItem="JGS-Xi-clS" secondAttribute="leading" constant="16" id="3FI-Ep-wLf"/>
                             <constraint firstItem="H5V-2k-R98" firstAttribute="top" secondItem="jHg-60-Zsh" secondAttribute="bottom" constant="8" id="6RO-bf-mN6"/>
+                            <constraint firstItem="JGS-Xi-clS" firstAttribute="trailing" secondItem="H5V-2k-R98" secondAttribute="trailing" constant="16" id="AQu-mk-QRe"/>
                             <constraint firstItem="JGS-Xi-clS" firstAttribute="trailing" secondItem="o2L-nu-P5Q" secondAttribute="trailing" constant="16" id="MTV-4r-0kd"/>
                             <constraint firstItem="PZF-Fa-HeT" firstAttribute="leading" secondItem="JGS-Xi-clS" secondAttribute="leading" constant="16" id="WzU-AG-Ljz"/>
                             <constraint firstItem="PZF-Fa-HeT" firstAttribute="top" secondItem="H5V-2k-R98" secondAttribute="bottom" constant="8" id="fTq-qw-qGj"/>
