@@ -24,9 +24,8 @@ class AddMedViewController: UIViewController {
     }
     
     @IBAction func saveButton(_ sender: Any) {
-        if let name = self.medNameTextField.text {
-            let med = MedicationModel(name: name)
-            med.save()
+        if let name = self.medNameTextField.text, let context = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext {
+            _ = Medication.createAndFetch(name: name, in: context)
         }
        self.closeModal()
     }

@@ -43,38 +43,46 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jHg-60-Zsh">
-                                <rect key="frame" x="16" y="20" width="48" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Cancel"/>
-                                <connections>
-                                    <action selector="cancelButton:" destination="8Ch-No-fYh" eventType="touchUpInside" id="hCF-KH-n8J"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H5V-2k-R98">
-                                <rect key="frame" x="16" y="58" width="45" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H5V-2k-R98">
+                                <rect key="frame" x="16" y="58" width="343" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PZF-Fa-HeT">
-                                <rect key="frame" x="16" y="87" width="97" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PZF-Fa-HeT">
+                                <rect key="frame" x="16" y="87" width="343" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o2L-nu-P5Q">
-                                <rect key="frame" x="324" y="20" width="34" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o2L-nu-P5Q">
+                                <rect key="frame" x="325" y="20" width="34" height="30"/>
                                 <state key="normal" title="Save"/>
                                 <connections>
                                     <action selector="saveButton:" destination="8Ch-No-fYh" eventType="touchUpInside" id="TON-K5-zhY"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jHg-60-Zsh">
+                                <rect key="frame" x="16" y="20" width="48" height="30"/>
+                                <state key="normal" title="Cancel"/>
+                                <connections>
+                                    <action selector="cancelButton:" destination="8Ch-No-fYh" eventType="touchUpInside" id="hCF-KH-n8J"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="jHg-60-Zsh" firstAttribute="top" secondItem="JGS-Xi-clS" secondAttribute="top" id="1iE-a8-dMK"/>
+                            <constraint firstItem="jHg-60-Zsh" firstAttribute="leading" secondItem="JGS-Xi-clS" secondAttribute="leading" constant="16" id="3FI-Ep-wLf"/>
+                            <constraint firstItem="H5V-2k-R98" firstAttribute="top" secondItem="jHg-60-Zsh" secondAttribute="bottom" constant="8" id="6RO-bf-mN6"/>
+                            <constraint firstItem="JGS-Xi-clS" firstAttribute="trailing" secondItem="H5V-2k-R98" secondAttribute="trailing" constant="16" id="AQu-mk-QRe"/>
+                            <constraint firstItem="JGS-Xi-clS" firstAttribute="trailing" secondItem="o2L-nu-P5Q" secondAttribute="trailing" constant="16" id="MTV-4r-0kd"/>
+                            <constraint firstItem="PZF-Fa-HeT" firstAttribute="leading" secondItem="JGS-Xi-clS" secondAttribute="leading" constant="16" id="WzU-AG-Ljz"/>
+                            <constraint firstItem="PZF-Fa-HeT" firstAttribute="top" secondItem="H5V-2k-R98" secondAttribute="bottom" constant="8" id="fTq-qw-qGj"/>
+                            <constraint firstItem="o2L-nu-P5Q" firstAttribute="top" secondItem="JGS-Xi-clS" secondAttribute="top" id="iWs-yY-ihh"/>
+                            <constraint firstItem="JGS-Xi-clS" firstAttribute="trailing" secondItem="PZF-Fa-HeT" secondAttribute="trailing" constant="16" id="mBP-G6-wpw"/>
+                            <constraint firstItem="H5V-2k-R98" firstAttribute="leading" secondItem="JGS-Xi-clS" secondAttribute="leading" constant="16" id="waC-1h-9K7"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="JGS-Xi-clS"/>
                     </view>
                     <connections>

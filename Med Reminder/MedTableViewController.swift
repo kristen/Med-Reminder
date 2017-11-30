@@ -1,107 +1,80 @@
 //
-//  MedTableViewController.swift
+//  CoreDataMedTableViewController.swift
 //  Med Reminder
 //
-//  Created by Kristen Sundquist on 11/26/17.
+//  Created by Kristen Sundquist on 11/28/17.
 //  Copyright © 2017 Kristen Sundquist. All rights reserved.
 //
 
 import UIKit
+import CoreData
 
-class MedTableViewController: UITableViewController {
+class MedTableViewController: FetchedResultsTableViewController {
+    var container: NSPersistentContainer? = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer {
+        didSet {
+            self.updateUI()
+        }
+    }
     
-    var medications = [MedicationModel]()
+    var fetchedResultsController: NSFetchedResultsController<Medication>?
+    
+    func updateUI() {
+        if let context = container?.viewContext {
+            let request: NSFetchRequest<Medication> = Medication.fetchRequest()
+            request.sortDescriptors = []
+            fetchedResultsController = NSFetchedResultsController<Medication>(
+                fetchRequest: request,
+                managedObjectContext: context,
+                sectionNameKeyPath: nil,
+                cacheName: nil
+            )
+            fetchedResultsController?.delegate = self
+            try? fetchedResultsController?.performFetch()
+            tableView.reloadData()
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        tableView.register(UINib(nibName: "MedTableViewCell", bundle: nil), forCellReuseIdentifier: "MedCell")
         
-        tableView.register(UINib(nibName: "MedTableViewCell", bundle: nil),    forCellReuseIdentifier: "MedCell")
-        
-        self.medications = MedicationModel.fetchSavedData()
+        self.updateUI()
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
-
+        
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        self.medications = MedicationModel.fetchSavedData()
-        self.tableView.reloadData()
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-    // MARK: - Table view data source
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return self.medications.count
-    }
-
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MedCell", for: indexPath) as! MedTableViewCell
-        let medModel = self.medications[indexPath.row]
-        cell.setMedModel(medModel: medModel)
-
+        
         // Configure the cell...
-
+        if let medModel = fetchedResultsController?.object(at: indexPath) {
+            cell.setMedModel(medModel: medModel)
+        }
+        
         return cell
     }
     
-
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         // Return false if you do not want the specified item to be editable.
         return true
     }
-
+    
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            // Delete from core data
-            if let managedObject = self.medications[indexPath.row].managedObject {
-                MedCoreData.context.delete(managedObject)
-                MedCoreData.save()
+            if let managedObject = self.fetchedResultsController?.object(at: indexPath), let context = self.container?.viewContext {
+                context.delete(managedObject)
+                try? context.save()
             }
-            // Delete from internal storage
-            self.medications.remove(at: indexPath.row)
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-            
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+        }
     }
 
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 }
