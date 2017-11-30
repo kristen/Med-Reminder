@@ -26,10 +26,10 @@ class FetchedResultsTableViewController: UITableViewController, NSFetchedResults
     func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
         switch type {
         case .insert: tableView.insertRows(at: [newIndexPath!], with: .fade)
-        case .delete: tableView.deleteRows(at: [newIndexPath!], with: .fade)
+        case .delete: tableView.deleteRows(at: [indexPath!], with: .fade)
         case .update: tableView.reloadRows(at: [newIndexPath!], with: .fade)
         case .move:
-            tableView.deleteRows(at: [newIndexPath!], with: .fade)
+            tableView.deleteRows(at: [indexPath!], with: .fade)
             tableView.insertRows(at: [newIndexPath!], with: .fade)
         }
     }

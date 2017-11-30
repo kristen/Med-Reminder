@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension CoreDataMedTableViewController {
+extension MedTableViewController {
 
     // MARK: - Table view data source
     

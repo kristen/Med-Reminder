@@ -11,9 +11,8 @@
 		7B295B501FCBB900005EE375 /* Medication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B295B4E1FCBB797005EE375 /* Medication.swift */; };
 		7B295B541FCBC2C0005EE375 /* AddMedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B295B531FCBC2C0005EE375 /* AddMedViewController.swift */; };
 		7B9F309B1FCE7C9600289275 /* FetchedResultsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9F309A1FCE7C9600289275 /* FetchedResultsTableViewController.swift */; };
-		7B9F309D1FCE7ED900289275 /* CoreDataMedTableViewController-FetchedResultsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9F309C1FCE7ED900289275 /* CoreDataMedTableViewController-FetchedResultsController.swift */; };
-		7B9F309F1FCE8A8700289275 /* CoreDataMedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9F309E1FCE8A8700289275 /* CoreDataMedTableViewController.swift */; };
-		7B9F30A11FCE8BAC00289275 /* MedCoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9F30A01FCE8BAC00289275 /* MedCoreData.swift */; };
+		7B9F309D1FCE7ED900289275 /* MedTableViewController-FetchedResultsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9F309C1FCE7ED900289275 /* MedTableViewController-FetchedResultsController.swift */; };
+		7B9F309F1FCE8A8700289275 /* MedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9F309E1FCE8A8700289275 /* MedTableViewController.swift */; };
 		7BC334071FCB67FB00778362 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC334061FCB67FB00778362 /* AppDelegate.swift */; };
 		7BC3340C1FCB67FB00778362 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7BC3340A1FCB67FB00778362 /* Main.storyboard */; };
 		7BC3340E1FCB67FB00778362 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7BC3340D1FCB67FB00778362 /* Assets.xcassets */; };
@@ -46,9 +45,8 @@
 		7B295B4E1FCBB797005EE375 /* Medication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Medication.swift; sourceTree = "<group>"; };
 		7B295B531FCBC2C0005EE375 /* AddMedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMedViewController.swift; sourceTree = "<group>"; };
 		7B9F309A1FCE7C9600289275 /* FetchedResultsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchedResultsTableViewController.swift; sourceTree = "<group>"; };
-		7B9F309C1FCE7ED900289275 /* CoreDataMedTableViewController-FetchedResultsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreDataMedTableViewController-FetchedResultsController.swift"; sourceTree = "<group>"; };
-		7B9F309E1FCE8A8700289275 /* CoreDataMedTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataMedTableViewController.swift; sourceTree = "<group>"; };
-		7B9F30A01FCE8BAC00289275 /* MedCoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedCoreData.swift; sourceTree = "<group>"; };
+		7B9F309C1FCE7ED900289275 /* MedTableViewController-FetchedResultsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MedTableViewController-FetchedResultsController.swift"; sourceTree = "<group>"; };
+		7B9F309E1FCE8A8700289275 /* MedTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedTableViewController.swift; sourceTree = "<group>"; };
 		7BC334031FCB67FB00778362 /* Med Reminder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Med Reminder.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7BC334061FCB67FB00778362 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7BC3340B1FCB67FB00778362 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -117,8 +115,8 @@
 				7B295B0E1FCBAF3B005EE375 /* Model.xcdatamodeld */,
 				7B295B4E1FCBB797005EE375 /* Medication.swift */,
 				7B9F309A1FCE7C9600289275 /* FetchedResultsTableViewController.swift */,
-				7B9F309E1FCE8A8700289275 /* CoreDataMedTableViewController.swift */,
-				7B9F309C1FCE7ED900289275 /* CoreDataMedTableViewController-FetchedResultsController.swift */,
+				7B9F309E1FCE8A8700289275 /* MedTableViewController.swift */,
+				7B9F309C1FCE7ED900289275 /* MedTableViewController-FetchedResultsController.swift */,
 				7BC3340F1FCB67FB00778362 /* LaunchScreen.storyboard */,
 				7BC334121FCB67FB00778362 /* Info.plist */,
 				7BC334351FCB9A5A00778362 /* MedTableViewCell.swift */,
@@ -126,7 +124,6 @@
 				7B295B531FCBC2C0005EE375 /* AddMedViewController.swift */,
 				7BC3340D1FCB67FB00778362 /* Assets.xcassets */,
 				7BC334061FCB67FB00778362 /* AppDelegate.swift */,
-				7B9F30A01FCE8BAC00289275 /* MedCoreData.swift */,
 			);
 			path = "Med Reminder";
 			sourceTree = "<group>";
@@ -286,12 +283,11 @@
 			files = (
 				7B295B501FCBB900005EE375 /* Medication.swift in Sources */,
 				7B9F309B1FCE7C9600289275 /* FetchedResultsTableViewController.swift in Sources */,
-				7B9F309D1FCE7ED900289275 /* CoreDataMedTableViewController-FetchedResultsController.swift in Sources */,
+				7B9F309D1FCE7ED900289275 /* MedTableViewController-FetchedResultsController.swift in Sources */,
 				7B295B101FCBAF3B005EE375 /* Model.xcdatamodeld in Sources */,
-				7B9F30A11FCE8BAC00289275 /* MedCoreData.swift in Sources */,
 				7BC334371FCB9A5A00778362 /* MedTableViewCell.swift in Sources */,
 				7BC334071FCB67FB00778362 /* AppDelegate.swift in Sources */,
-				7B9F309F1FCE8A8700289275 /* CoreDataMedTableViewController.swift in Sources */,
+				7B9F309F1FCE8A8700289275 /* MedTableViewController.swift in Sources */,
 				7B295B541FCBC2C0005EE375 /* AddMedViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
